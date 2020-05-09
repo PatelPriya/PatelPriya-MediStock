@@ -75,7 +75,11 @@
                         <li><a class="section-scroll" href="@Url.Action("Index","Home")">Home</a></li>
                         <li><a class="section-scroll" href="@Url.Action("Medicine","Product")">Products</a></li>
                         <li><a class="section-scroll" href="@Url.Action("AboutUs","Home")">About Us</a></li>
+                        <li><a class="section-scroll" href="@Url.Action("Auth","Authentication")">@TempData["SuccessMessage"]</a></li>
+                        @if(TempData["SuccessMessage"] == null)
+                        {
                         <li><a class="section-scroll" href="@Url.Action("Auth","Authentication")">Sign In</a></li>
+                        }
                         <li><a class="section-scroll" href="@Url.Action("ShoppingCart","Cart")">Cart</a></li>                        
                     </ul>
                 </div>

@@ -39,7 +39,7 @@ namespace MediStockWeb.Controllers
             //parameters.Add("ORDER_ID", orderModel.OrderId);
              parameters.Add("ORDER_ID", "ORD879631"); //OrderId must be unique everytime.
             parameters.Add("TXN_AMOUNT", requestData.Amount);
-            parameters.Add("CALLBACK_URL", "https://localhost:44388/Payment/PaytmResponse");
+            parameters.Add("CALLBACK_URL", "https://localhost:44320/Payment/PaytmResponse");
            // parameters.Add("CALLBACK_URL", "url");//This parameter is not mandatory. Use this to pass the callback url dynamically.
 
             string checksum = paytm.CheckSum.generateCheckSum(merchantKey, parameters);

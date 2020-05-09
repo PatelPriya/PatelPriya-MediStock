@@ -137,9 +137,10 @@ namespace MediStockWeb.Controllers
             }
             else
             {
+                TempData["SuccessMessage"] = model.FirstName ;
                 if (obj.IsActive == true && obj.IsDeleted == false)
                 {
-                    return RedirectToAction("Index", "Admin", new { area = "Admin" });
+                    return RedirectToAction("Index", "Home", new { area = "" });
                 }
                 else if (obj.IsActive == true && obj.IsDeleted == false)
                 {
