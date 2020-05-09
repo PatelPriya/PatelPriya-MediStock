@@ -2,7 +2,9 @@
 using DAL.Data;
 using DAL.Domains;
 using MediStockWeb.Controllers.Base;
+using MediStockWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace MediStockWeb.Controllers
 {
@@ -27,6 +29,11 @@ namespace MediStockWeb.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            //var medicine = _context.Medicines.FirstOrDefault();
+            //var model = new HomeModel();
+            //model.ImageUrl = "~/images/" + medicine.PictureStr;
+            //return View(model);
+            //return ViewComponent("SliderMenu");
             return View();
         }
 

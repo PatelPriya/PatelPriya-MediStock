@@ -1,0 +1,39 @@
+﻿@model List<MediStockWeb.Models.HomeModel>
+@*<div class="hero-slider">
+        <ul class="slides">
+            @foreach (var ctgr in Model)
+            {
+                <li class="bg-dark-30 restaurant-page-header bg-dark" style="background-image:url(@ctgr.ImageUrl);">
+                <li class="bg-dark-30 restaurant-page-header bg-dark">
+                    <div class="titan-caption">
+                        <div class="caption-content">
+                            <img src="@ctgr.ImageUrl" width="88" height="106" alt="Image" class="img-thumbnail" />
+                            <div class="font-alt mb-30 titan-title-size-1">@ctgr.Name</div>
+                            <div class="font-alt mb-40 titan-title-size-4">@ctgr.Price</div>
+                        </div>
+                    </div>
+                </li>
+            </li>
+            }
+        </ul>
+    </div>*@
+<section class="module" id="portfolio">
+    <div class="container">
+
+        @foreach (var ctgr in Model)
+        {
+            <ul class="works-grid works-grid-masonry works-grid-4 works-hover-d" id="works-grid">
+                <li class="work-item Antipyretics Analgesics">
+                    <a href="#">
+                        <div class="work-image"><img src="@ctgr.ImageUrl" alt="Portfolio Item" width="20" height="20"/></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">@ctgr.Name</h3>
+                            <div class="work-descr">@ctgr.Price</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        }
+    </div>
+</section>
+
