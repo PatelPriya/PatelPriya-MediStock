@@ -6,6 +6,10 @@ using MediStockWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace MediStockWeb.Controllers
 {
     public class HomeController : BaseController
@@ -27,14 +31,11 @@ namespace MediStockWeb.Controllers
 
         // Sample add comment to show the github pull
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string categoryName)
         {
-            //var medicine = _context.Medicines.FirstOrDefault();
-            //var model = new HomeModel();
-            //model.ImageUrl = "~/images/" + medicine.PictureStr;
-            //return View(model);
-            //return ViewComponent("SliderMenu");
-            return View();
+            var img = new List<Medicine>();
+            img = _context.Medicines.Where(x => x.CategoryName == categoryName).ToList();
+            return View(img);
         }
 
         [HttpPost]
