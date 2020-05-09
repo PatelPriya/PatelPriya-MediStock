@@ -1,22 +1,22 @@
 ﻿using DAL.Data;
 using MediStockWeb.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MediStockWeb.Views.ViewComponents
 {
-    public class SliderMenuViewComponent : ViewComponent
+    public class MedicineProductViewComponent : ViewComponent
     {
-
         #region Fields
         private readonly MediStockContext _context;
 
         #endregion
 
         #region Ctor
-        public SliderMenuViewComponent(MediStockContext context)
+        public MedicineProductViewComponent(MediStockContext context)
         {
             _context = context;
         }
@@ -26,11 +26,11 @@ namespace MediStockWeb.Views.ViewComponents
         {
             var medicine = _context.Medicines.ToList();
             var homelist = new List<HomeModel>();
-            foreach(var item in medicine)
+            foreach (var item in medicine)
             {
                 var model = new HomeModel
-                { 
-                    ImageUrl= "/images/" + item.PictureStr,
+                {
+                    ImageUrl = "/images/" + item.PictureStr,
                     Name = item.Name,
                     Price = item.Price
 
@@ -41,3 +41,4 @@ namespace MediStockWeb.Views.ViewComponents
         }
     }
 }
+

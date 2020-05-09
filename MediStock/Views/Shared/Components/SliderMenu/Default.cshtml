@@ -20,20 +20,22 @@
 <section class="module" id="portfolio">
     <div class="container">
 
-        @foreach (var ctgr in Model)
-        {
-            <ul class="works-grid works-grid-masonry works-grid-4 works-hover-d" id="works-grid">
+        <ul class="works-grid works-grid-masonry works-grid-4 works-hover-d" id="works-grid">
+            @foreach (var ctgr in Model)
+            {
+
                 <li class="work-item Antipyretics Analgesics">
                     <a href="#">
-                        <div class="work-image"><img src="@ctgr.ImageUrl" alt="Portfolio Item" width="20" height="20"/></div>
+                        <div class="work-image"><img src="@ctgr.ImageUrl" alt="Portfolio Item" width="20" height="20" /></div>
                         <div class="work-caption font-alt">
                             <h3 class="work-title">@ctgr.Name</h3>
                             <div class="work-descr">@ctgr.Price</div>
                         </div>
                     </a>
                 </li>
+            }
             </ul>
-        }
+        
     </div>
 </section>
 
