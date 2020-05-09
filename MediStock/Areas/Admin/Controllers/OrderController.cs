@@ -1,18 +1,42 @@
-﻿using MediStockWeb.Areas.Admin.Controllers.Base;
+﻿using BAL.Services;
+using DAL.Data;
+using MediStockWeb.Areas.Admin.Controllers.Base;
 using MediStockWeb.Areas.Admin.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace MediStockWeb.Areas.Admin.Controllers
 {
     public class OrderController : BaseController
     {
+        private readonly IWebHostEnvironment _env;
+        private readonly IOrderService _orderService;
+        private readonly MediStockContext _context;
+
+        public OrderController(
+        IOrderService orderService,
+        IWebHostEnvironment environment, 
+        MediStockContext context
+            )
+        {
+            _env = environment;
+            _orderService = orderService;
+            _orderService = orderService;
+            _context = context;
+        }
+
+
         public IActionResult List()
         {
-            var model = new OrderModel();
-            TempData["OrderActiveMenuItem"] = "order-sidebar-id";
-            return View(model);
+            //var model = new OrderModel();
+            //TempData["OrderActiveMenuItem"] = "order-sidebar-id";
+            //return View(model);
+            var order = _context.Orders.ToList();
+            return View(order);
+
         }
-        
+
         [HttpPost]
         public IActionResult OrderList(OrderModel searchModel)
         {

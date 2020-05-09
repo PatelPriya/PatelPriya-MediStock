@@ -1,19 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Mvc;
-
 @{
     Layout = "_Layout";
 }
 <section class="home-section home-full-height" id="home">
+    
     <div class="hero-slider">
         <ul class="slides">
-            <li class="bg-dark-30 restaurant-page-header bg-dark" style="background-image:url(Content/Themes/Store/assets/images/restaurant/slider1.png);">
-                <div class="titan-caption">
-                    <div class="caption-content">
-                        <div class="font-alt mb-30 titan-title-size-1"> Hello & welcome</div>
-                        <div class="font-alt mb-40 titan-title-size-4">We are MediStock</div><a class="section-scroll btn btn-border-w btn-round" href="@Url.Action("Medicine", "Product")">Check Our Products</a>
-                    </div>
-                </div>
-            </li>
             <li class="bg-dark-30 restaurant-page-header bg-dark" style="background-image:url(Content/Themes/Store/assets/images/restaurant/slider2.png);">
                 <div class="titan-caption">
                     <div class="caption-content">
@@ -39,23 +31,10 @@
 
             @await Component.InvokeAsync("CategoryMenu")
 
-            @*@await Component.InvokeAsync("MedicineImage")*@
+            @await Component.InvokeAsync("SliderMenu")
 
-            @*<div class="row">
-            <div class="col-sm-12">
-                <ul class="filter font-alt" id="filters">
-                    <li><a class="current wow fadeInUp" href="#" data-filter="*">All</a></li>
-                    <li><a class="wow fadeInUp" href="#" data-filter=".Antipyretics" data-wow-delay="0.2s">Antipyretics</a></li>
-                    <li><a class="wow fadeInUp" href="#" data-filter=".Analgesics" data-wow-delay="0.4s">Analgesics</a></li>
-                    <li><a class="wow fadeInUp" href="#" data-filter=".Antimalarial" data-wow-delay="0.6s">Antimalarial </a></li>
-                    <li><a class="wow fadeInUp" href="#" data-filter=".Antibiotics" data-wow-delay="0.6s">Antibiotics</a></li>
-                    <li><a class="wow fadeInUp" href="#" data-filter=".Antiseptics" data-wow-delay="0.6s">Antiseptics</a></li>
-                    <li><a class="wow fadeInUp" href="#" data-filter=".Moodstabilizers" data-wow-delay="0.6s">Mood stabilizers</a></li>
-                </ul>
-            </div>
-        </div>*@
             <ul class="works-grid works-grid-masonry works-grid-4 works-hover-d" id="works-grid">
-                <li class="work-item Antipyretics Analgesics">
+                @*<li class="work-item Antipyretics Analgesics">
                     <a href="#">
                         <div class="work-image"><img src="~/Content/Themes/Store/assets/images/portfolio/slider1.png" alt="Portfolio Item" /></div>
                         <div class="work-caption font-alt">
@@ -153,7 +132,19 @@
                             <div class="work-descr">Illustration</div>
                         </div>
                     </a>
+                </li>*@
+                @*@foreach (var ctgr in Model)
+            {
+                <li class="work-item Antipyretics Analgesics">
+                    <a href="#">
+                        <div class="work-image"><img src="@ctgr.ImageUrl" alt="Portfolio Item" /></div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">@ctgr.Name</h3>
+                            <div class="work-descr">@ctgr.Price</div>
+                        </div>
+                    </a>
                 </li>
+            }*@
             </ul>
         </div>
     </section>

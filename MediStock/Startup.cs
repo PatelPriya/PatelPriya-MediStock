@@ -49,6 +49,7 @@ namespace MediStockWeb
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IMedicineService, MedicineService>();
+            services.AddScoped<IOrderService, OrderService>();
 
             
 

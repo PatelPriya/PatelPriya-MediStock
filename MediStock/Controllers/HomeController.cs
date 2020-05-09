@@ -2,7 +2,9 @@
 using DAL.Data;
 using DAL.Domains;
 using MediStockWeb.Controllers.Base;
+using MediStockWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 using System;
 using System.Collections.Generic;
@@ -31,7 +33,6 @@ namespace MediStockWeb.Controllers
         [HttpGet]
         public IActionResult Index(string categoryName)
         {
-
             var img = new List<Medicine>();
             img = _context.Medicines.Where(x => x.CategoryName == categoryName).ToList();
             return View(img);
